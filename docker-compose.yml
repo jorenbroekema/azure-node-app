@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  psql:
+    container_name: psql
+    image: postgres:13.1
+    ports:
+      - 5432:5432
+    volumes:
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+      - psql-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: joren
+      POSTGRES_PASSWORD: grapefruits
+
+  app:
+    container_name: app
+    image: node:14-alpine
+    depends_on:
+      - psql
+
+    # Keep container open with tail, install dev deps, so we can choose between
+    # running tests or running dev for local development + watch mode
+    command: sh -c "npm i && tail -F docker-compose.yml"
+
+    ports:
+      - 3000:3000
+    working_dir: /app
+    volumes:
+      - ./:/app
+
+# persist these volumes
+volumes:
+  psql-data:

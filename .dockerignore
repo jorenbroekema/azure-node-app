@@ -1,0 +1,4 @@
+.github
+docker-entrypoint-initdb.d
+node_modules
+docker-compose*.yml

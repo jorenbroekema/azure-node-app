@@ -1,0 +1,27 @@
+html,
+body {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#todo-form {
+  margin-bottom: 20px;
+}
+
+#todos {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: lightcyan;
+}
+
+.todo p {
+  margin: 0;
+  padding-right: 20px;
+}
