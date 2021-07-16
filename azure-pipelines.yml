@@ -1,0 +1,24 @@
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: Bash@3
+  displayName: Put secrets in .env
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo -e "DB_USER=joren\nDB_PW=grapefruits" > .env
+
+- task: Npm@1
+  inputs:
+    command: 'install'
+
+- task: Bash@3
+  displayName: Run tests
+  inputs:
+    targetType: 'inline'
+    script: |
+      docker-compose -f docker-compose.yml -f docker-compose-ci.yml up --exit-code-from app
