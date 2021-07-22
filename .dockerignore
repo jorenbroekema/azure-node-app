@@ -2,3 +2,4 @@
 docker-entrypoint-initdb.d
 node_modules
 docker-compose*.yml
+azure-pipelines.yml
