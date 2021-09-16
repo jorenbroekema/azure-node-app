@@ -22,7 +22,7 @@ describe('Todos API', () => {
   it('should support fetching all todos', async () => {
     const result = await chai.request(server).get('/todos');
 
-    expect(result.status).to.equal(200);
+    expect(result.status).to.equal(201);
     expect(result.type).to.equal('application/json');
     expect(result.body.status).to.equal('success');
     expect(result.body.data).to.eql([
