@@ -12,7 +12,7 @@ To build the image:
 npm run build
 ```
 
-The app image should be built and pushed upon pushes to main git branch, since the source will have changed, and the source is copied to the image to make the container isolated from its environment. Github actions take care of this (deploy workflow)
+The app image should be built and pushed upon pushes to main git branch, since the source will have changed, and the source is copied to the image to make the container isolated from its environment. Github actions takes care of this (deploy workflow).
 
 ## Local development
 
