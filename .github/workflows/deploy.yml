@@ -40,7 +40,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: jorenb/node-fullstack-app:${{ github.sha }}
+          tags: jorenb/yc2021-todo:${{ github.sha }}
 
   deploy:
     name: Deploy to azure web app
@@ -53,4 +53,4 @@ jobs:
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
-        images: registry.hub.docker.com/jorenb/node-fullstack-app:${{ github.sha }}
+        images: registry.hub.docker.com/jorenb/yc2021-todo:${{ github.sha }}
