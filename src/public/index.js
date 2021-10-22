@@ -83,7 +83,6 @@ class TodosController {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ id }),
     });
 
     if (response.status === 200) {
