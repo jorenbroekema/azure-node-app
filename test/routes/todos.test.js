@@ -59,7 +59,10 @@ describe('Todos API', () => {
   });
 
   it('should support updating a todo item', async () => {
-    const resultUpdate = await chai.request(server).put('/todos/1').send({ name: 'Do groceries!' });
+    const resultUpdate = await chai
+      .request(server)
+      .patch('/todos/1')
+      .send({ name: 'Do groceries!' });
     expect(resultUpdate.status).to.equal(200);
     expect(resultUpdate.type).to.equal('application/json');
     expect(resultUpdate.body.status).to.eql('success');

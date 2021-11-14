@@ -56,7 +56,7 @@ router.post('/todos', async (ctx) => {
   }
 });
 
-router.put('/todos/:id', async (ctx) => {
+router.patch('/todos/:id', async (ctx) => {
   const { id } = ctx.params;
   const { name } = ctx.request.body;
 

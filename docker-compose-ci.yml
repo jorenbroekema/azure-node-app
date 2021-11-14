@@ -2,4 +2,4 @@ version: '3.8'
 
 services:
   app:
-    command: sh -c "npm ci && npm run test:ci"
+    command: sh -c "npm i && npm run test:ci"

@@ -21,10 +21,11 @@ services:
 
     # Keep container open with tail, install dev deps, so we can choose between
     # running tests or running dev for local development + watch mode
-    command: sh -c "npm i && tail -F docker-compose.yml"
+    command: sh -c "npm i && npm rebuild esbuild && tail -F docker-compose.yml"
 
     ports:
-      - 3000:3000
+      - 5000:5000 #node
+      - 3000:3000 #vite
     working_dir: /app
     volumes:
       - ./:/app

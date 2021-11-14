@@ -4,9 +4,11 @@
   "private": true,
   "scripts": {
     "build": "docker build -t jorenb/node-fullstack-app:latest .",
+    "compile": "vite build src/vue",
     "up": "docker-compose up -d",
     "down": "docker-compose down",
-    "dev": "docker exec -it app sh -c \"npx nodemon src/index.js\"",
+    "dev": "docker exec -it app sh -c \"npx concurrently \\\"npx nodemon src/index.js\\\" \\\"npx vite src/vue --host 0.0.0.0\\\"\"",
+    "prod": "docker run -d -p 80:80 jorenb/node-fullstack-app",
     "migrate": "docker exec -it app npx knex migrate:latest",
     "rollback": "docker exec -it app npx knex migrate:rollback --all",
     "inspect": "docker exec -it psql psql -U joren",
@@ -19,20 +21,27 @@
   "author": "Joren Broekema",
   "license": "ISC",
   "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
+    "concurrently": "^6.4.0",
     "mocha": "^8.2.1",
     "nodemon": "^2.0.6",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "vite": "^2.6.4"
   },
   "dependencies": {
+    "@koa/cors": "^3.1.0",
     "dotenv": "^8.2.0",
     "knex": "^0.95.4",
     "koa": "^2.13.0",
     "koa-bodyparser": "^4.3.0",
     "koa-router": "^10.0.0",
     "koa-static": "^5.0.0",
-    "pg": "^8.6.0"
+    "pg": "^8.6.0",
+    "vue": "^3.2.16",
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.2"
   },
   "prettier": {
     "singleQuote": true,
