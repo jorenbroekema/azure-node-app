@@ -1,17 +1,17 @@
-import { createApp } from "vue";
-import { createRouter, createWebHashHistory } from "vue-router";
-import { createStore } from "vuex";
-import App from "./App.vue";
-import TodoList from "./components/TodoList.vue";
-import About from "./components/About.vue";
+import { createApp } from 'vue';
+import { createRouter, createWebHashHistory } from 'vue-router';
+import { createStore } from 'vuex';
+import App from './App.vue';
+import TodoList from './components/TodoList.vue';
+import About from './components/About.vue';
 
 const routes = [
   {
-    path: "/",
+    path: '/',
     component: TodoList,
-    props: { msg: "My Todo List" },
+    props: { msg: 'My Todo List!!' },
   },
-  { path: "/about", component: About },
+  { path: '/about', component: About },
 ];
 
 const router = createRouter({
@@ -35,4 +35,4 @@ const store = createStore({
 const app = createApp(App);
 app.use(router);
 app.use(store);
-app.mount("#app");
+app.mount('#app');
