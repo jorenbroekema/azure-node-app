@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - vue
 
 env:
   AZURE_WEBAPP_NAME: kiki-todo
