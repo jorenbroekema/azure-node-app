@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  AZURE_WEBAPP_NAME: oefenapp
+  AZURE_WEBAPP_NAME: my-todo-app-node
 
 jobs:
   build:
