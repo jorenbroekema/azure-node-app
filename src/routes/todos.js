@@ -21,6 +21,7 @@ router.get('/todos', async (ctx) => {
   }
 });
 
+// /todos/3 (niet /todos/:3)
 router.get('/todos/:id', async (ctx) => {
   const { id } = ctx.params;
 
