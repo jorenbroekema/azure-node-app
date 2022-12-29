@@ -52,4 +52,4 @@ jobs:
       with:
         app-name: ${{ env.AZURE_WEBAPP_NAME }}
         publish-profile: ${{ secrets.AZURE_PUBLISH_PROFILE }}
-        images: registry.hub.docker.com/jorenb/node-fullstack-app:${{ github.sha }}
+        images: registry.hub.docker.com/jorenb/yc-dec-todos:${{ github.sha }}
