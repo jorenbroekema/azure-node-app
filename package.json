@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "docker build -t jorenb/node-fullstack-app:latest .",
+    "build": "docker build -t jorenb/yc-dec-todos:latest .",
     "up": "docker-compose up -d",
     "down": "docker-compose down",
     "dev": "docker exec -it app sh -c \"npx nodemon src/index.js\"",

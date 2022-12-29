@@ -7,7 +7,7 @@ on:
       - main
 
 env:
-  AZURE_WEBAPP_NAME: my-todo-app-node
+  AZURE_WEBAPP_NAME: yc-dec-todos
 
 jobs:
   build:
@@ -39,7 +39,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: jorenb/node-fullstack-app:${{ github.sha }}
+          tags: jorenb/yc-dec-todos:${{ github.sha }}
 
   deploy:
     name: Deploy to azure web app
