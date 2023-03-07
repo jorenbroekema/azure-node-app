@@ -21,7 +21,6 @@ router.get('/todos', async (ctx) => {
   }
 });
 
-// /todos/3 (niet /todos/:3)
 router.get('/todos/:id', async (ctx) => {
   const { id } = ctx.params;
 
@@ -57,7 +56,6 @@ router.post('/todos', async (ctx) => {
   }
 });
 
-// Some comment
 router.put('/todos/:id', async (ctx) => {
   const { id } = ctx.params;
   const { name } = ctx.request.body;
